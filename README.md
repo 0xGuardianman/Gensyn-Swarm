@@ -1,5 +1,7 @@
 # 🧠 Gensyn Node Setup Guide
 
+<img width="302" height="183" alt="Screenshot 2025-10-24 at 8 51 21 AM" src="https://github.com/user-attachments/assets/80001869-8366-4413-979a-f949d95f38ce" />
+
 Welcome to the **Gensyn Node Installation Guide** — this document will help you set up and run your Gensyn Testnet node step-by-step.  
 Gensyn is a **decentralized compute network** designed to train AI models collaboratively by distributing workloads across nodes like yours.  
 
@@ -151,6 +153,7 @@ Start the swarm node:
 ```
 
 When you see the swarm initialization screen, **detach** it by pressing:
+<img width="623" height="169" alt="workspaces can" src="https://github.com/user-attachments/assets/649cf755-c53d-4235-81a4-4c262e0193f0" />
 
 ```
 Ctrl + A + D
@@ -184,6 +187,8 @@ echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.profile
 
 1. Visit [Ngrok Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken)  
 2. Sign up and copy your **AuthToken**  
+<img width="819" height="223" alt="Your Authtoken" src="https://github.com/user-attachments/assets/bdc28e4b-28c9-498f-a878-8a3feecf2898" />
+
 3. Run the following commands:
 
 ```bash
@@ -193,6 +198,7 @@ ngrok http 3000
 ```
 
 A link will appear — open it in your browser, submit your email, and log in.
+![Uploading Screenshot 2025-10-22 at 6.18.32 PM.png…]()
 
 ---
 
@@ -205,6 +211,8 @@ screen -r swarm
 ```
 
 When prompted, answer the following:
+<img width="623" height="169" alt="Screenshot 2025-10-22 at 6 11 32 PM" src="https://github.com/user-attachments/assets/be1b6fa3-f2eb-473b-9c29-a3ea51b743c4" />
+
 - First: `N`
 - Second: *(Press Enter)*
 - Third: `Y` (judge)
@@ -228,15 +236,6 @@ cat ~/rl-swarm/modal-login/temp-data/userApiKey.json
 
 Store these files securely — they are required to recover your node.
 
----
-
-# 🧩 Summary
-
-✅ Install dependencies  
-✅ Clone the Gensyn repository  
-✅ Run the swarm node  
-✅ Configure Ngrok  
-✅ Backup credentials  
 
 ---
 
