@@ -41,86 +41,134 @@ Use this command:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-🔧 Step 1.2 — Install Utilities and Build Tools
+```
+
+---
+
+## 🔧 Step 1.2 — Install Utilities and Build Tools
+
 Use this command:
 
-bash
-Copy code
+```bash
 sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
-🐍 Step 1.3 — Install Python
+```
+
+---
+
+## 🐍 Step 1.3 — Install Python
+
 Use this command:
 
-bash
-Copy code
+```bash
 sudo apt install python3 python3-pip python3-venv python3-dev -y
-🧱 Step 1.4 — Install Node.js and Yarn
+```
+
+---
+
+## 🧱 Step 1.4 — Install Node.js and Yarn
+
 Run these commands one by one:
 
-bash
-Copy code
+```bash
 sudo apt update
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 sudo apt-get install -y nodejs
 node -v
 npm install -g yarn
 yarn -v
-🎀 Step 1.5 — (Optional) Install Yarn via Script
+```
+
+---
+
+## 🎀 Step 1.5 — (Optional) Install Yarn via Script
+
 If you want to install Yarn using the official script:
 
-bash
-Copy code
+```bash
 curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
-📂 Step 2 — Clone the Repository
+```
+
+---
+
+# 📂 Step 2 — Clone the Repository
+
 Clone the Gensyn swarm repository:
 
-bash
-Copy code
+```bash
 git clone https://github.com/gensyn-ai/rl-swarm/
-🚀 Step 3 — Run the Swarm Node
-🧾 If you're an existing user, make sure your swarm.pem file is in the rl-swarm directory.
-If it’s missing, follow the Gensyn recovery guide to restore it.
+```
 
-🖥️ Step 3.1 — Start a Screen Session
+---
+
+# 🚀 Step 3 — Run the Swarm Node
+
+> 🧾 If you're an existing user, make sure your `swarm.pem` file is in the `rl-swarm` directory.  
+> If it’s missing, follow the Gensyn recovery guide to restore it.
+
+---
+
+## 🖥️ Step 3.1 — Start a Screen Session
+
 This lets your node keep running even if you close the terminal:
 
-bash
-Copy code
+```bash
 screen -S swarm
-📁 Step 3.2 — Navigate to the Directory
+```
+
+---
+
+## 📁 Step 3.2 — Navigate to the Directory
+
 Move into the project folder:
 
-bash
-Copy code
+```bash
 cd rl-swarm
-🧬 Step 3.3 — Create and Activate a Python Environment
+```
+
+---
+
+## 🧬 Step 3.3 — Create and Activate a Python Environment
+
 Set up a virtual environment:
 
-bash
-Copy code
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 # If the above doesn't work, try:
 . .venv/bin/activate
-⚙️ Step 3.4 — Run the Swarm
+```
+
+---
+
+## ⚙️ Step 3.4 — Run the Swarm
+
 Start the swarm node:
 
-bash
-Copy code
+```bash
 ./run_rl_swarm.sh
-When you see the swarm initialization screen, detach it by pressing:
+```
 
-Copy code
+When you see the swarm initialization screen, **detach** it by pressing:
+
+```
 Ctrl + A + D
-🌐 Step 4 — Set Up Ngrok
+```
+
+---
+
+# 🌐 Step 4 — Set Up Ngrok
+
 Ngrok allows your node to communicate externally.
 
-🔽 Step 4.1 — Install Ngrok
+---
+
+## 🔽 Step 4.1 — Install Ngrok
+
 Run these commands:
 
-bash
-Copy code
+```bash
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip
 unzip ngrok-stable-linux-amd64.zip
 mkdir -p ~/.local/bin
@@ -128,52 +176,68 @@ mv ngrok ~/.local/bin/
 chmod +x ~/.local/bin/ngrok
 echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.profile
 . ~/.profile
-🔑 Step 4.2 — Add Your Auth Token
-Visit Ngrok Dashboard
+```
 
-Sign up and copy your AuthToken
+---
 
-Run the following commands:
+## 🔑 Step 4.2 — Add Your Auth Token
 
-bash
-Copy code
+1. Visit [Ngrok Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken)  
+2. Sign up and copy your **AuthToken**  
+3. Run the following commands:
+
+```bash
 screen -S NGROK
 ngrok config add-authtoken YOUR_AUTHTOKEN
 ngrok http 3000
+```
+
 A link will appear — open it in your browser, submit your email, and log in.
 
-🔄 Step 5 — Reconnect and Complete Setup
+---
+
+# 🔄 Step 5 — Reconnect and Complete Setup
+
 Reattach to your swarm screen:
 
-bash
-Copy code
+```bash
 screen -r swarm
+```
+
 When prompted, answer the following:
+- First: `N`
+- Second: *(Press Enter)*
+- Third: `Y` (judge)
 
-First: N
+🎉 **Your Gensyn node is now live and operational!**
 
-Second: (Press Enter)
+---
 
-Third: Y (judge)
+# 💾 Step 6 — Backup Important Files
 
-🎉 Your Gensyn node is now live and operational!
-
-💾 Step 6 — Backup Important Files
-🧠 Save the following file:
-Copy code
+### 🧠 Save the following file:
+```
 /root/rl-swarm/swarm.pem
-🔐 Also back up these credential files:
-bash
-Copy code
+```
+
+### 🔐 Also back up these credential files:
+```bash
 cat ~/rl-swarm/modal-login/temp-data/userData.json
 cat ~/rl-swarm/modal-login/temp-data/userApiKey.json
+```
+
 Store these files securely — they are required to recover your node.
 
-🧩 Summary
-✅ Install dependencies
-✅ Clone the Gensyn repository
-✅ Run the swarm node
-✅ Configure Ngrok
-✅ Backup credentials
+---
 
-Contribute to decentralized AI — power the future with your compute! ⚡
+# 🧩 Summary
+
+✅ Install dependencies  
+✅ Clone the Gensyn repository  
+✅ Run the swarm node  
+✅ Configure Ngrok  
+✅ Backup credentials  
+
+---
+
+**Contribute to decentralized AI — power the future with your compute! ⚡**
