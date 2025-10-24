@@ -211,7 +211,8 @@ screen -r swarm
 ```
 
 When prompted, answer the following:
-<img width="623" height="169" alt="Screenshot 2025-10-22 at 6 11 32 PM" src="https://github.com/user-attachments/assets/be1b6fa3-f2eb-473b-9c29-a3ea51b743c4" />
+<img width="917" height="146" alt="Screenshot 2025-10-24 at 8 16 47 AM" src="https://github.com/user-attachments/assets/4983255c-16f5-4b16-a3ec-89fd3b447e3d" />
+
 
 - First: `N`
 - Second: *(Press Enter)*
