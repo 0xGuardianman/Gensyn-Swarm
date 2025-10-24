@@ -198,7 +198,8 @@ ngrok http 3000
 ```
 
 A link will appear — open it in your browser, submit your email, and log in.
-![Uploading Screenshot 2025-10-22 at 6.18.32 PM.png…]()
+
+<img width="1479" height="723" alt="Screenshot 2025-10-22 at 6 18 32 PM" src="https://github.com/user-attachments/assets/08ef2b60-3c30-4db8-86ff-542275856b7a" />
 
 ---
 
